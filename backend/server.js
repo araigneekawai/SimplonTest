@@ -11,3 +11,11 @@ sequelize.sync().then(() => {
     console.log(`Serveur lancé sur http://localhost:${PORT}`);
   });
 });
+
+const cors = require('cors');
+const express = require('express');
+const app = express();
+
+app.use(cors({
+  origin: 'https://araigneekawai.github.io',
+}));
