@@ -1,26 +1,37 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Comic Sans MS', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #f4f4f4;
+  background-image: url('nigel-hoare-MrhsQ3nh8fM-unsplash.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: orange;
+  text-shadow:
+    2px 2px 0px yellow,  
+    -2px -2px 0px yellow,  
+    2px -2px 0px yellow,   
+    -2px 2px 0px yellow,  
+    3px 0px 0px yellow,
+    -3px 0px 0px yellow,   
+    0px 3px 0px yellow,  
+    0px -3px 0px yellow; 
 }
 
 .container {
   text-align: center;
   padding: 20px;
-  background-color: white;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #FF6347;
-  color: white;
+  padding: 30px 60px;
+  background-color: yellow;
+  font-size: 2em;
+  color: orange;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -31,6 +42,6 @@ button:hover {
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 2em;
   margin-top: 20px;
 }
