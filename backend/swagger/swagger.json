@@ -1,0 +1,156 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Carambar API",
+    "description": "Une API pour gérer des blagues.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/blagues": {
+      "get": {
+        "summary": "Récupérer toutes les blagues",
+        "responses": {
+          "200": {
+            "description": "Liste des blagues",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "content": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erreur serveur interne"
+          }
+        }
+      },
+      "post": {
+        "summary": "Ajouter une nouvelle blague",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "content": {
+                    "type": "string"
+                  }
+                },
+                "required": ["content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Blague ajoutée",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erreur serveur interne"
+          }
+        }
+      }
+    },
+    "/api/v1/blagues/{id}": {
+      "get": {
+        "summary": "Récupérer une blague par ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "ID de la blague"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Blague trouvée",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Blague non trouvée"
+          },
+          "500": {
+            "description": "Erreur serveur interne"
+          }
+        }
+      }
+    },
+    "/api/v1/blagues/random": {
+      "get": {
+        "summary": "Récupérer une blague aléatoire",
+        "responses": {
+          "200": {
+            "description": "Blague aléatoire",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Aucune blague trouvée"
+          },
+          "500": {
+            "description": "Erreur serveur interne"
+          }
+        }
+      }
+    }
+  }
+}
