@@ -18,7 +18,7 @@ app.use("/api/v1/blagues", jokeRoutes);
 // Swagger documentation
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// Page d’accueil simple
+// Page d’accueil
 app.get("/", (req, res) => {
   res.send("Bienvenue sur l'API Carambar !");
 });
